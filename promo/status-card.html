@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- WhatsApp Status card template (1080x1920).
+     Pick a card with ?card=launch|food|groceries|pharmacy|fashion|electronics|beauty
+     Personalize for a shop with &shop=Shop%20Name&unit=12
+     Render all cards with: ./build-status-cards.sh  (see that file)
+     Domain pill reads the DOMAIN constant below (real domain already set). -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; font-family: "Instrument Sans", sans-serif; }
+  .card { position: relative; width: 1080px; height: 1920px; background: #0c4a4e; }
+  .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg,
+      rgba(12, 74, 78, 0.45) 0%,
+      rgba(12, 74, 78, 0.05) 26%,
+      rgba(12, 74, 78, 0.10) 44%,
+      rgba(12, 74, 78, 0.82) 66%,
+      rgba(10, 58, 61, 0.97) 100%);
+  }
+  .stripe {
+    position: absolute; top: 0; left: 0; right: 0; height: 22px;
+    background: repeating-linear-gradient(90deg,
+      #e9a13b 0 72px, #f6f1e7 72px 144px, #12807a 144px 216px, #f6f1e7 216px 288px);
+  }
+  .brand {
+    position: absolute; top: 72px; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: center; gap: 22px;
+    color: #ffffff;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 52px; font-weight: 800; letter-spacing: -0.01em;
+    text-shadow: 0 2px 18px rgba(12, 74, 78, 0.6);
+  }
+  .brand svg { width: 72px; height: 72px; border-radius: 16px; box-shadow: 0 2px 18px rgba(12,74,78,0.5); }
+  .bottom {
+    position: absolute; left: 84px; right: 84px; bottom: 96px;
+    color: #f6f1e7; text-align: left;
+  }
+  .eyebrow {
+    font-size: 34px; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: #e9a13b; margin-bottom: 28px;
+  }
+  h1 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 104px; font-weight: 800; line-height: 1.04;
+    letter-spacing: -0.02em; color: #ffffff; margin-bottom: 34px;
+  }
+  .shopline { font-size: 44px; font-weight: 600; color: #f6f1e7; margin-bottom: 44px; }
+  .shopline span { color: #9fc4bf; font-weight: 400; }
+  .pill {
+    display: inline-block;
+    background: #e9a13b; color: #12302f;
+    font-size: 42px; font-weight: 700;
+    padding: 26px 54px; border-radius: 999px;
+    margin-bottom: 52px;
+  }
+  .meta { font-size: 33px; color: #b8d0cc; font-weight: 500; letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="bg" id="bg" src="" alt="">
+    <div class="overlay"></div>
+    <div class="stripe"></div>
+    <div class="brand">
+      <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0c4a4e"/><path d="M5 20c3-4 6-4 9 0s6 4 9 0" stroke="#e9a13b" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M5 13c3-4 6-4 9 0s6 4 9 0" stroke="#f6f1e7" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      Bayshore Plaza
+    </div>
+    <div class="bottom">
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1 id="headline"></h1>
+      <div class="shopline" id="shopline"></div>
+      <div class="pill" id="pill"></div>
+      <div class="meta" id="meta"></div>
+    </div>
+  </div>
+<script>
+  var DOMAIN = "bayshoreplaza.com";
+
+  var CARDS = {
+    launch: {
+      bg: "bg/launch.jpg",
+      eyebrow: "Port Antonio · Portland",
+      headline: "Bayshore Plaza is now online",
+      shopline: "Every shop. Every number. One link.",
+      meta: "Open daily · early morning until midnight"
+    },
+    food: {
+      bg: "bg/food.jpg",
+      eyebrow: "Now on the plaza website",
+      headline: "Order your lunch on WhatsApp",
+      meta: "Boundbrook · Port Antonio"
+    },
+    groceries: {
+      bg: "bg/groceries.jpg",
+      eyebrow: "Now on the plaza website",
+      headline: "Groceries done in one stop",
+      meta: "Boundbrook · Port Antonio"
+    },
+    pharmacy: {
+      bg: "bg/pharmacy.jpg",
+      eyebrow: "Now on the plaza website",
+      headline: "Your pharmacy, easier to find",
+      meta: "Boundbrook · Port Antonio"
+    },
+    fashion: {
+      bg: "bg/fashion.jpg",
+      eyebrow: "Now on the plaza website",
+      headline: "New arrivals? Show the whole parish",
+      meta: "Boundbrook · Port Antonio"
+    },
+    electronics: {
+      bg: "bg/electronics.jpg",
+      eyebrow: "Now on the plaza website",
+      headline: "Big buys start with a search",
+      meta: "Boundbrook · Port Antonio"
+    },
+    beauty: {
+      bg: "bg/beauty.jpg",
+      eyebrow: "Now on the plaza website",
+      headline: "Book your spot on WhatsApp",
+      meta: "Boundbrook · Port Antonio"
+    }
+  };
+
+  var q = new URLSearchParams(location.search);
+  var card = CARDS[q.get("card")] || CARDS.launch;
+  var shop = q.get("shop");
+  var unit = q.get("unit");
+
+  document.getElementById("bg").src = card.bg;
+  document.getElementById("eyebrow").textContent = card.eyebrow;
+  document.getElementById("headline").textContent = card.headline;
+  document.getElementById("pill").textContent = DOMAIN;
+  document.getElementById("meta").textContent = card.meta;
+
+  var shopline = document.getElementById("shopline");
+  if (shop) {
+    shopline.innerHTML = "";
+    shopline.appendChild(document.createTextNode(shop + " "));
+    var u = document.createElement("span");
+    u.textContent = unit ? "· Unit " + unit : "";
+    shopline.appendChild(u);
+  } else if (card.shopline) {
+    shopline.textContent = card.shopline;
+  } else {
+    /* template default — replaced per shop with &shop=...&unit=... */
+    shopline.innerHTML = 'Your Shop Name <span>· Unit —</span>';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Heavy video intermediates — re-downloadable from Higgsfield history
+# or rebuildable from the steps in promo/video/CREDITS.md.
+# The finished videos (promo/video/*.mp4) ARE committed.
+promo/video/clips/
+promo/video/scenes/
+promo/video/shots/
+promo/video/src/

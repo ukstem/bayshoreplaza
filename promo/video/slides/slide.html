@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Pitch-video slide template (1920x1080). Pick with ?s=site|features|end
+     Site pages render live in fixed-width iframes (phone mockups). -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body { width: 1920px; height: 1080px; overflow: hidden; font-family: "Instrument Sans", sans-serif; background: #f6f1e7; }
+  .slide { position: relative; width: 1920px; height: 1080px; display: none; }
+  .slide.active { display: block; }
+  .stripe { position: absolute; top: 0; left: 0; right: 0; height: 14px;
+    background: repeating-linear-gradient(90deg, #e9a13b 0 56px, #f6f1e7 56px 112px, #12807a 112px 168px, #f6f1e7 168px 224px); }
+  .phone {
+    width: 406px; height: 848px;
+    border-radius: 44px; border: 8px solid #12302f;
+    overflow: hidden; background: #fff;
+    box-shadow: 0 30px 60px rgba(18, 48, 47, 0.28);
+    flex: none;
+  }
+  .phone iframe { width: 390px; height: 832px; border: 0; }
+  .eyebrow { font-size: 30px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #d95d39; margin-bottom: 24px; }
+  h1 { font-family: "Bricolage Grotesque", sans-serif; font-size: 88px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; color: #0c4a4e; margin-bottom: 30px; }
+  .pill { display: inline-block; background: #e9a13b; color: #12302f; font-size: 38px; font-weight: 700; padding: 22px 48px; border-radius: 999px; }
+  .sub { font-size: 34px; color: #4b5f5e; line-height: 1.5; max-width: 760px; }
+  ul.feat { list-style: none; margin-top: 40px; display: grid; gap: 26px; }
+  ul.feat li { font-size: 36px; color: #12302f; font-weight: 500; display: flex; gap: 18px; align-items: flex-start; }
+  ul.feat li::before { content: "✓"; color: #12807a; font-weight: 700; font-size: 38px; }
+
+  /* site slide */
+  .site-wrap { display: flex; align-items: center; justify-content: space-between; padding: 0 150px; height: 1080px; }
+  /* features slide */
+  .feat-wrap { display: flex; align-items: center; gap: 80px; padding: 0 130px; height: 1080px; }
+  .feat-wrap .phones { display: flex; gap: 50px; }
+  .feat-wrap .phone { width: 356px; height: 744px; border-radius: 38px; }
+  .feat-wrap .phone iframe { width: 390px; height: 832px; transform: scale(0.875); transform-origin: 0 0; }
+  /* end slide */
+  .end { background: linear-gradient(135deg, #0c4a4e 0%, #123c3f 70%, #12807a 140%); color: #f6f1e7;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .end h1 { color: #ffffff; font-size: 110px; margin: 40px 0 16px; }
+  .end .tag { font-size: 42px; color: #e9a13b; font-weight: 600; margin-bottom: 46px; }
+  .end .pill { font-size: 44px; padding: 26px 60px; }
+  .end .credit { position: absolute; bottom: 44px; left: 0; right: 0; font-size: 24px; color: #9fc4bf; }
+  .end svg.mark { width: 120px; height: 120px; border-radius: 26px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+</style>
+</head>
+<body>
+
+<div class="slide" id="site">
+  <div class="stripe"></div>
+  <div class="site-wrap">
+    <div>
+      <div class="eyebrow">Now live</div>
+      <h1>Bayshore Plaza<br>is online</h1>
+      <p class="sub">A fast, mobile-first website for the plaza — built for the phones your customers actually use.</p>
+      <p style="margin-top:44px"><span class="pill">bayshoreplaza.com</span></p>
+    </div>
+    <div class="phone"><iframe src="../../../index.html" scrolling="no"></iframe></div>
+  </div>
+</div>
+
+<div class="slide" id="features">
+  <div class="stripe"></div>
+  <div class="feat-wrap">
+    <div class="phones">
+      <div class="phone"><iframe src="../../../directory.html" scrolling="no"></iframe></div>
+      <div class="phone"><iframe src="../../../shop-demo.html" scrolling="no"></iframe></div>
+    </div>
+    <div>
+      <div class="eyebrow">What it does</div>
+      <h1 style="font-size:72px">Every shop,<br>found &amp; reachable</h1>
+      <ul class="feat">
+        <li>Full shop directory with search</li>
+        <li>WhatsApp ordering, one tap</li>
+        <li>A page for every shop</li>
+        <li>Found on Google &amp; Maps</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="slide end" id="end">
+  <div class="stripe"></div>
+  <svg class="mark" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0c4a4e"/><path d="M5 20c3-4 6-4 9 0s6 4 9 0" stroke="#e9a13b" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M5 13c3-4 6-4 9 0s6 4 9 0" stroke="#f6f1e7" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+  <h1>Bayshore Plaza</h1>
+  <div class="tag">Port Antonio's shopping hub — now online</div>
+  <span class="pill">bayshoreplaza.com</span>
+  <div class="credit">Built by Cloudbotics Web Services · Photography: Layneartz19, Wikimedia Commons (CC BY-SA 4.0)</div>
+</div>
+
+<script>
+  var s = new URLSearchParams(location.search).get("s") || "site";
+  document.getElementById(s).classList.add("active");
+</script>
+</body>
+</html>

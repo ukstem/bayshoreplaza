@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Shop Page (Demo) — Bayshore Plaza</title>
+  <meta name="description" content="A demo of what a Bayshore Plaza shop profile page looks like: photo gallery, opening hours, WhatsApp ordering and map — built by Cloudbotics Web Services.">
+  <meta name="robots" content="noindex">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sample Shop Page — Bayshore Plaza">
+  <meta property="og:description" content="A demo of what your shop's page could look like on the Bayshore Plaza website.">
+  <!-- PLACEHOLDER: replace domain with the real deployed URL (og-image.jpg ships in this folder; regenerate from og-card.html) -->
+  <meta property="og:url" content="https://bayshoreplaza.com/shop-demo.html">
+  <meta property="og:image" content="https://bayshoreplaza.com/og-image.jpg">
+  <meta property="og:locale" content="en_JM">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c4a4e'/%3E%3Cpath d='M5 20c3-4 6-4 9 0s6 4 9 0' stroke='%23e9a13b' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M5 13c3-4 6-4 9 0s6 4 9 0' stroke='%23f6f1e7' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="awning" aria-hidden="true"></div>
+
+  <!-- This whole page is a SALES EXHIBIT: a fictional example tenant showing
+       shop owners what their page could look like. Nothing here is a real business. -->
+  <div class="demo-banner">DEMO — this is a sample page. Your shop could look like this.</div>
+
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="brand" href="index.html">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0c4a4e"/><path d="M5 20c3-4 6-4 9 0s6 4 9 0" stroke="#e9a13b" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M5 13c3-4 6-4 9 0s6 4 9 0" stroke="#f6f1e7" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+        Bayshore Plaza
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="shop-demo.html" aria-current="page">Sample Shop Page</a>
+        <a href="for-businesses.html">For Shop Owners</a>
+        <a href="index.html#leasing">Leasing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <span class="eyebrow">Fictional example shop · Bayshore Plaza</span>
+      <div class="shop-card__head" style="align-items:center">
+        <h1>Seaview Kitchen</h1>
+        <span class="unit-plate">Unit 12</span>
+      </div>
+      <p class="badge-listed" style="margin:0.4rem 0 1rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        Listed on Bayshore Plaza online
+      </p>
+
+      <!-- PLACEHOLDER: demo gallery — these are AI-generated images for the fictional
+           demo shop. Real tenants supply real photos (compressed to ~100–200 KB, lazy-loaded). -->
+      <div class="gallery">
+        <img class="gallery__item" src="img/demo-storefront.jpg" alt="Seaview Kitchen storefront (demo image)" width="1100" height="619" loading="lazy">
+        <img class="gallery__item" src="img/demo-dish.jpg" alt="Fried chicken with rice and peas (demo image)" width="1100" height="825" loading="lazy">
+        <img class="gallery__item" src="img/demo-interior.jpg" alt="Inside the shop (demo image)" width="1100" height="825" loading="lazy">
+        <img class="gallery__item" src="img/demo-team.jpg" alt="The Seaview Kitchen team (demo image)" width="1100" height="825" loading="lazy">
+        <img class="gallery__item" src="img/demo-specials.jpg" alt="Daily specials chalkboard (demo image)" width="1100" height="822" loading="lazy">
+      </div>
+
+      <div class="two-col">
+        <div>
+          <h2>About the shop</h2>
+          <p>Home-style Jamaican cooking right at the plaza — fried chicken, stew peas, curry goat and fresh juices, cooked fresh every day. Eat in, take away, or send a WhatsApp order ahead and pick it up on your way through Boundbrook.</p>
+          <div class="hero__actions" style="margin:1rem 0 1.6rem">
+            <!-- PLACEHOLDER: WhatsApp number — wa.me link uses a dummy number -->
+            <a class="btn btn--whatsapp" href="https://wa.me/18760000000?text=Hi%20Seaview%20Kitchen%2C%20I%27d%20like%20to%20place%20an%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+            <a class="btn btn--ghost" href="tel:+18760000000">Call the shop</a>
+          </div>
+
+          <h2>Find us in the plaza</h2>
+          <p>Unit 12, Bayshore Plaza, Boundbrook — 5 minutes west of downtown Port Antonio, right by the Knutsford Express depot.</p>
+          <p><a class="btn btn--primary btn--small" href="https://www.google.com/maps?q=18.1814917,-76.4604981" target="_blank" rel="noopener">Map pin: Bayshore Plaza</a></p>
+
+          <h2 style="margin-top:1.6rem">On Instagram</h2>
+          <!-- PLACEHOLDER: Instagram embed — drop the shop's embed code here
+               (instagram.com → post → Embed), or link to their profile -->
+          <div class="insta-placeholder">
+            <p style="margin:0 0 0.3rem">📷 Instagram feed goes here</p>
+            <p style="margin:0">Latest posts from the shop, embedded automatically.</p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="visit-card">
+            <h3>Opening hours</h3>
+            <!-- PLACEHOLDER: demo hours — each real shop supplies its own -->
+            <table class="hours-table">
+              <tr><td>Monday – Thursday</td><td>7:00 am – 9:00 pm</td></tr>
+              <tr><td>Friday – Saturday</td><td>7:00 am – 11:00 pm</td></tr>
+              <tr><td>Sunday</td><td>8:00 am – 6:00 pm</td></tr>
+            </table>
+          </div>
+          <div class="visit-card" style="margin-top:0.9rem;border-top:4px solid var(--mango)">
+            <h3>Want a page like this?</h3>
+            <p>Every Bayshore Plaza shop can have its own page — photos, hours, WhatsApp orders and all.</p>
+            <a class="btn btn--sand btn--small" href="for-businesses.html" style="margin-top:0.6rem">See plans &amp; pricing</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h3>Bayshore Plaza</h3>
+          <p>Boundbrook, Port Antonio<br>Portland, Jamaica<br><a href="https://www.google.com/maps?q=18.1814917,-76.4604981" target="_blank" rel="noopener">Get directions</a></p>
+        </div>
+        <div>
+          <h3>Visit</h3>
+          <p>Open daily, early morning until midnight<br><a href="tel:+18768299889">+1 876-829-9889</a></p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <p><a href="directory.html">Shop directory</a><br><a href="shop-demo.html">Sample shop page</a><br><a href="for-businesses.html">For shop owners</a></p>
+        </div>
+      </div>
+      <p class="credit">Website by Cloudbotics Web Services ·
+        <!-- PLACEHOLDER: Cloudbotics contact email -->
+        <a href="mailto:hello@cloudbotics.example.com">hello@cloudbotics.example.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a href="tel:+18768299889">📞 Call the plaza</a>
+    <a href="https://www.google.com/maps?q=18.1814917,-76.4604981" target="_blank" rel="noopener">📍 Directions</a>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
